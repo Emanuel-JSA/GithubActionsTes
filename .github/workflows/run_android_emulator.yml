@@ -5,7 +5,6 @@ on:
     branches:
       - homologacao
 
-
 jobs:
   run-emulator:
     runs-on: ubuntu-latest
@@ -13,12 +12,13 @@ jobs:
     steps:
       # Verifique se a ação foi acionada
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Configurar o Java
       - name: Set up JDK 11
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
+          distribution: 'temurin'
           java-version: '11'
 
       # Baixar o Android SDK
